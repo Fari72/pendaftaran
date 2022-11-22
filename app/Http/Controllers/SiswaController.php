@@ -6,7 +6,6 @@ use App\Models\Siswa;
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
 use Validator;
-use PDF;
 
 class SiswaController extends Controller
 {
@@ -92,7 +91,7 @@ class SiswaController extends Controller
     public function show($id)
     {
         $siswa = Siswa::find($id);
-        
+        $jurusan = Jurusan::find($id);
         return response()->json($siswa);
     }
 
@@ -106,7 +105,7 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::find($id);
         $jurusan = Jurusan::find($id);
-        return view('siswa.form', compact('siswa'));
+        return view('siswa.form', compact('siswa','jurusan'));
     }
 
     /**

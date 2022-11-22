@@ -23,7 +23,7 @@
                         @enderror
                         
                         {{-- Add Jurusan --}}
-                        <label class="mt-2" for="nama">Jurusan</label>
+                        <label class="mt-2" for="jurusan_id">Jurusan</label>
                         <select type="text" name="jurusan_id" id="jurusan_id" class="form-control @error('jurusan_id') is-invalid @enderror">
                             <option selected>Pilih...</option>
                             @foreach($jurusan as $jurusan)

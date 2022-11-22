@@ -9,6 +9,8 @@
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset ('assets/modules/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{asset ('assets/modules/bootstrap-social.css') }}">
+  <link rel="stylesheet" href="{{asset ('assets/modules/all.min.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css">
 
   <!-- CSS Libraries -->
@@ -23,13 +25,9 @@
 
  <!-- Template iziToast -->
  <link rel="stylesheet" href="{{ asset('assets/izitoast/iziToast.min.css') }}">
- <link rel="stylesheet" href="{{ asset('assets/izitoast/iziToast.min.js') }}">
-
- {{-- SweetAlert --}}
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
-<body>
-  <div id="app">
+ <body>
+   <div id="app">
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
         
@@ -60,20 +58,23 @@
   <script src="{{asset('assets/modules/bootstrap.min.js')}}"></script>
   <script src="{{asset('assets/modules/jquery.nicescroll.min.js')}}"></script>
   <script src="{{asset('assets/modules/moment.min.js')}}"></script>
-  <script src="{{asset('assets/js/stisla.js')}}"></script>
   
-  <!-- JS Libraies -->
   {{-- DataTables --}}
   <script src="{{ asset('assets/datatable/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('assets/datatable/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('assets/datatable/dataTables.responsive.min.js') }}"></script>
   <script src="{{ asset('assets/datatable/responsive.bootstrap4.min.js') }}"></script>
-
-  <!-- Page Specific JS File -->
   
-  <!-- Template JS File -->
-  <script src="{{asset('assets/js/scripts.js')}}"></script>
-  <script src="{{asset('assets/js/custom.js')}}"></script>
+   {{-- SweetAlert --}}
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   
+   <!-- JS Izitoast -->
+   <link rel="stylesheet" href="{{ asset('assets/izitoast/iziToast.min.js') }}">
+  
+   <!-- Template JS File -->
+   <script src="{{asset('assets/js/scripts.js')}}"></script>
+   <script src="{{asset('assets/js/custom.js')}}"></script>
+   <script src="{{asset('assets/js/stisla.js')}}"></script>
 
   @stack('script')
 </body>

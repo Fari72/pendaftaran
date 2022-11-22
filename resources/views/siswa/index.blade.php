@@ -45,87 +45,6 @@
                     </div>
                 </div>
 
-                {{-- Tambah siswa --}}
-                {{-- <div class="col-12 col-md-5 col-lg-5">
-                    <div class="card">
-
-                        <div class="card-header">
-                            <h4>Tambah siswa</h4>
-                        </div>
-
-                        <div class="form-group" id="formTambah">
-                            <form action="{{ route('siswa.store') }}" method="POST">
-                            @csrf
-                            @method('POST')
-
-                                <div class="card-body">
-                            
-                                    <label class="" for="nama">Kode siswa</label>
-                                    <input type="text" class="form-control" value="Kode siswa..." aria-label="Disabled input example" disabled readonly>
-
-                                    <label class="" for="nama">Nama siswa</label>
-                                    <input type="text" name="nama" id="nama" value="{{ old('nama')}}" class="form-control @error('nama') is-invalid @enderror">
-                                    @error('nama')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-        
-                                    <label class="mt-2" for="nama">Kategori</label>
-                                    <select type="text" name="kategori_id" id="kategori_id" value="{{ old('kategori_id')}}" class="form-control @error('kategori_id') is-invalid @enderror">
-                                        <option selected>Pilih...</option>
-                                        @foreach($kategori as $kategori)
-                                            <option value="{{$kategori->id}}">{{$kategori->nama}}</option>
-                                        @endforeach
-                                    @error('kategori_id')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    </select>
-                                    
-                                    <label class="mt-2" for="nama">Tempat</label>
-                                    <select type="text" name="tempat_id" id="tempat_id" class="form-control @error('tempat_id') is-invalid @enderror">
-                                        <option selected>Pilih...</option>
-                                        @foreach($tempat as $tempat)
-                                            <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
-                                        @endforeach
-                                    @error('tempat_id')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    </select>
-        
-                                    <label class="mt-2" for="nama">Stok siswa</label>
-                                    <input type="number" name="stok" id="stok" value="{{ old('stok')}}" class="form-control @error('stok') is-invalid @enderror">
-                                    @error('stok')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-        
-                                    <label class="mt-2" for="nama">Keterangan</label>
-                                    <textarea type="text" name="keterangan" id="keterangan" value="{{ old('keterangan')}}" class="form-control @error('keterangan') is-invalid @enderror"></textarea>
-                                    @error('keterangan')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    
-                                    <div class="footer mt-2">
-                                        <button type="submit" class="btn btn-success">Simpan</button>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </form>
-                        </div>
-
-                        
-                    </div>
-                </div> --}}
-
             </div>
         </div>
     </section>
@@ -204,16 +123,13 @@
         function addForm(url){
             $('#modalForm').modal('show');
             $('#modalForm .modal-title').text('Tambah Data Siswa');
+            
             $('#modalForm form')[0].reset();
-
             $('#modalForm form').attr('action', url);
             $('#modalForm [name=_method]').val('post');
+            $('#modalForm [jurusan_id=_method]').val('post');
         }
 
-        function pdf(url)
-        {
-            $('.form-siswa').attr('action', url).attr('target', '_blank').submit();
-        }
         function editData(url){
             $('#modalForm').modal('show');
             $('#modalForm .modal-title').text('Edit Data Siswa');
@@ -221,6 +137,7 @@
             $('#modalForm form')[0].reset();
             $('#modalForm form').attr('action', url);
             $('#modalForm [name=_method]').val('put');
+            $('#modalForm [jurusan_id=_method]').val('put');
 
             $.get (url)
                 .done((response) => {
