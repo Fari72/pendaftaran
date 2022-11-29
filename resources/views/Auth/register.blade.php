@@ -32,7 +32,7 @@
 
               <div class="card-body">
                   <div class="form-group">
-                        <form action="/siswa" method="POST">
+                        <form action="/postregister" method="POST">
                             @csrf
                   <div class="form-group">
                     <label for="email">Email</label>
