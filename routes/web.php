@@ -9,8 +9,12 @@ use App\Http\Controllers\
     JurusanController,
 };
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('home.welcome');
+});
+
+Route::get('/home', function () {
+    return view('/logout');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -18,7 +22,7 @@ Route::post('/postlogin', [AuthController::class, 'postlogin'])->name('postlogin
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/simpanRegister', [AuthController::class, 'simpanRegister'])->name('simpanRegister');
+Route::post('/register', [AuthController::class, 'postregister'])->name('postregister');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

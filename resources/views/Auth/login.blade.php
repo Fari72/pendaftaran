@@ -42,7 +42,7 @@
 
             <div class="card card-primary">
               <div class="card-body">
-                <form method="POST" action="/postlogin">
+                <form method="POST" action="/dashboard">
                     @csrf
                   <div class="form-group">
                     <label for="email">Email</label>

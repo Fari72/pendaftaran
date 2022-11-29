@@ -39,7 +39,7 @@ class SiswaController extends Controller
                     </div>
                 ';
             })
-            ->rawColumns(['aksi', 'jurusan_id'])
+            ->rawColumns(['aksi', 'siswa'])
             ->make(true);
     }
 
@@ -91,7 +91,6 @@ class SiswaController extends Controller
     public function show($id)
     {
         $siswa = Siswa::find($id);
-        $jurusan = Jurusan::find($id);
         return response()->json($siswa);
     }
 
@@ -104,8 +103,7 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = Siswa::find($id);
-        $jurusan = Jurusan::find($id);
-        return view('siswa.form', compact('siswa','jurusan'));
+        return view('siswa.form', compact('siswa'));
     }
 
     /**
@@ -119,7 +117,7 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::find($id);
         $siswa->nama = $request->nama;
-        $siswa->jurusan = $request->jurusan;
+        $siswa->jurusan_id = $request->jurusan_id;
         $siswa->update();
 
         return response()->json('Data Berhasil Disimpan',200);
